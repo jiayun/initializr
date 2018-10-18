@@ -51,7 +51,8 @@
 		<module>initializr-docs</module>
 		<module>initializr-generator</module>
 		<module>initializr-web</module>
-	</modules>
+        <module>initializr-app</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>
