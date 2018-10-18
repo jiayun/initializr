@@ -1,0 +1,5 @@
+apNo: {{apNo}}
+
+spring:
+  profiles:
+    active: ${NODE_ENV:dev}

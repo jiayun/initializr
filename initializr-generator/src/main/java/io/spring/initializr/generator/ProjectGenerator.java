@@ -266,7 +266,10 @@ public class ProjectGenerator {
 
 		File resources = new File(dir, "src/main/resources");
 		resources.mkdirs();
-		writeText(new File(resources, "application.yml"), "");
+
+		String fileName = "application.yml";
+		write(new File(resources, fileName), fileName, model);
+
 		writeText(new File(resources, "application-lab.yml"), "");
 		writeText(new File(resources, "application-staging.yml"), "");
 		writeText(new File(resources, "application-prod.yml"), "");
