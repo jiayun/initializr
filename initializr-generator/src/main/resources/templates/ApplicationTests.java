@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
 {{/newTestInfrastructure}}
 {{testAnnotations}}public class {{applicationName}}Tests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
 }
