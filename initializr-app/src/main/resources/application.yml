@@ -25,6 +25,15 @@ spring:
           enabled: true
 
 initializr:
+  groupId:
+    value: tw.jcconf
+  artifactId:
+    title: Artifact（ap 後面填上 AP 編號）
+    value: ap
+  name:
+    value: ap
+  description:
+    value: AP
   env:
     boms:
       azure:
