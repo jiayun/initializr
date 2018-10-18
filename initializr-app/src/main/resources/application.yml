@@ -1363,9 +1363,6 @@ initializr:
     - name: Kotlin
       id: kotlin
       default: false
-    - name: Groovy
-      id: groovy
-      default: false
   bootVersions:
     - name : Latest SNAPSHOT
       id: 1.2.4.BUILD-SNAPSHOT
