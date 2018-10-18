@@ -1330,7 +1330,7 @@ initializr:
       tags:
         build: gradle
         format: project
-      default: false
+      default: true
       action: /starter.zip
     - name: Gradle Config
       id: gradle-build
