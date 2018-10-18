@@ -274,6 +274,9 @@ public class ProjectGenerator {
 		writeText(new File(resources, "application-staging.yml"), "");
 		writeText(new File(resources, "application-prod.yml"), "");
 
+		fileName = "logback-spring.xml";
+		write(new File(resources, fileName), fileName, model);
+
 		if (request.hasWebFacet()) {
 			new File(dir, "src/main/resources/templates").mkdirs();
 			new File(dir, "src/main/resources/static").mkdirs();
@@ -487,6 +490,10 @@ public class ProjectGenerator {
 		}
 		if (!request.getBoms().isEmpty()) {
 			model.put("hasBoms", true);
+		}
+
+		if (request.getArtifactId().startsWith("ap")) {
+			model.put("apNo", request.getArtifactId().substring(2));
 		}
 
 		if (isGradleBuild(request)) {

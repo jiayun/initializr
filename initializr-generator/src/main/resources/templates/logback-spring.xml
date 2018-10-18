@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <springProfile name="default, dev">
+        <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>./log/{{apNo}}.log</file>
+            <encoder>
+                <pattern>${FILE_LOG_PATTERN}</pattern>
+                <charset>UTF-8</charset>
+            </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>./log/{{apNo}}_%d{yyyyMMdd}.log</fileNamePattern>
+            </rollingPolicy>
+        </appender>
+
+        <root level="DEBUG">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="ROLLING"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="lab, staging, prod">
+        <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>/opt/AP/Patch_log/{{apNo}}/{{apNo}}.log</file>
+            <encoder>
+                <pattern>${FILE_LOG_PATTERN}</pattern>
+                <charset>UTF-8</charset>
+            </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>/opt/AP/Patch_log/{{apNo}}/{{apNo}}_%d{yyyyMMdd}.log</fileNamePattern>
+            </rollingPolicy>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="ROLLING"/>
+        </root>
+    </springProfile>
+
+    <logger name="org.springframework" level="info"/>
+</configuration>
