@@ -266,7 +266,10 @@ public class ProjectGenerator {
 
 		File resources = new File(dir, "src/main/resources");
 		resources.mkdirs();
-		writeText(new File(resources, "application.properties"), "");
+		writeText(new File(resources, "application.yml"), "");
+		writeText(new File(resources, "application-lab.yml"), "");
+		writeText(new File(resources, "application-staging.yml"), "");
+		writeText(new File(resources, "application-prod.yml"), "");
 
 		if (request.hasWebFacet()) {
 			new File(dir, "src/main/resources/templates").mkdirs();
