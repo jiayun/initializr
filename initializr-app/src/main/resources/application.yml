@@ -1323,24 +1323,6 @@ initializr:
           groupId: org.springframework.boot
           artifactId: spring-boot-actuator-docs
   types:
-    - name: Maven Project
-      id: maven-project
-      description: Generate a Maven based project archive
-      sts-id: starter.zip
-      tags:
-        build: maven
-        format: project
-      default: true
-      action: /starter.zip
-    - name: Maven POM
-      id: maven-build
-      description: Generate a Maven pom.xml
-      sts-id: pom.xml
-      tags:
-        build: maven
-        format: build
-      default: false
-      action: /pom.xml
     - name: Gradle Project
       id: gradle-project
       description: Generate a Gradle based project archive
