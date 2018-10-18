@@ -39,9 +39,6 @@ public class InitializrApp {
 		SpringApplication.run(InitializrApp.class, args);
 	}
 
-	protected InitializrApp() {
-	}
-
 	/**
 	 * {@link Executor} configuration for event processing.
 	 */
